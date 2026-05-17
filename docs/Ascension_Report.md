@@ -20,3 +20,9 @@ The JAX implementation achieved a phenomenal speedup factor of approximately **1
 
 ### The JIT Compilation Phenomenon
 The first run of a JIT-compiled function is always significantly slower than the second run because JAX must perform an initial "tracing" phase to build an abstract computation graph, which the XLA compiler then translates into optimized machine code for the hardware accelerator. During the second run, JAX bypasses the Python interpreter and the compilation phase entirely, immediately executing the cached native machine code at maximum hardware speeds.
+
+## Exercise 3: Time Travel via Gradients (grad)
+For the third exercise, I constructed a complete gradient descent optimization loop running for exactly 20 iterations to find the ideal initial velocity for a projectile. Starting from an initial guess of $v_{\text{initial}} = 10.0$, the script evaluated the mean squared error loss against a strict target distance of 150.0 meters after 5 seconds of flight. By extracting the exact analytical gradient in each step via `jax.grad` and applying a parameter update with a learning rate of 0.01, the simulation successfully guided the velocity to its optimal value of exactly 30.0 meters per second.
+
+### Analytical Gradients (jax.grad) vs. Finite Differences
+The fundamental difference is that `jax.grad` utilizes backward-mode automatic differentiation to compute the exact analytical slope by evaluating the exact mathematical derivatives along the graph execution path in a single backward pass. In contrast, approximating the slope via finite differences using the formula $\frac{f(x+h)-f(x)}{h}$ requires running the full forward simulation multiple times with a tiny numerical perturbation $h$, making it highly vulnerable to severe floating-point roundoff errors and causing it to scale poorly as the number of optimization parameters increases.
