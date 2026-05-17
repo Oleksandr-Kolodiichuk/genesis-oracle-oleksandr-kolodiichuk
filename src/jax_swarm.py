@@ -18,6 +18,8 @@ def oscillator_step(x, v, w):
     # Return the new state without modifying any external variables (Functional Purity)
     return x_new, v_new
 
+vmap_step = jax.vmap(oscillator_step)
+
 # Hardware Fusion (jit)
 @jax.jit
 def simulate_jax(x, v, w, steps):
@@ -42,12 +44,14 @@ if __name__ == "__main__":
     w = jax.random.uniform(key, shape=(N,), minval=0.5, maxval=2.0)
     x = jnp.ones(N)
     v = jnp.zeros(N)
+    
     print("Run 1: JIT Compilation (Warm-up / Tracing phase)...")
     start_run1 = time.time()
     res_x, res_v = simulate_jax(x, v, w, steps)
     res_x.block_until_ready() 
     end_run1 = time.time()
     print(f"JAX Run 1 Time (Compilation + Execution): {end_run1 - start_run1:.4f} seconds")
+    
     print("\nRun 2: Compiled Execution...")
     start_run2 = time.time()
     res_x2, res_v2 = simulate_jax(x, v, w, steps)
