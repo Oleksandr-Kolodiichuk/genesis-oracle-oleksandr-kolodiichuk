@@ -37,3 +37,14 @@ The following output files were successfully generated and verified in the `data
 - `ancients_plot.png` (Harmonic Pendulum and Radioactive Decay)
 - `rl_stable.png` (RL Circuit - Stable Discrete Integration)
 - `rl_sabotaged.png` (RL Circuit - Sabotaged/Unstable Discrete Integration)
+
+## Week 5: The Fabric of Reality (Physics-Informed Neural Networks)
+This week, I transcended classical grid-based solvers by constructing a continuous PINN using JAX and Flax.
+
+* **Mesh-Free Data:** Generated continuous spatial and temporal sampling using JAX PRNGKeys.
+* **Neural Surrogate:** Engineered a Flax-based Multi-Layer Perceptron tailored for smooth analytical derivatives.
+* **Differentiable Physics:** Embedded the 1D Heat Equation into the neural network using nested `jax.grad`.
+* **Silicon Ignition:** Trained the network on a Colab GPU using XLA compilation and an Optax Adam optimizer.
+* **Final Deployment:** Generated a fully interactive 3D surface projection of the physics tensor.
+
+[View the Final 3D Fabric Report](docs/Fabric_Report.md)
