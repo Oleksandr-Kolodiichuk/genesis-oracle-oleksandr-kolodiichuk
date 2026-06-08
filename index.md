@@ -48,3 +48,16 @@ This week, I transcended classical grid-based solvers by constructing a continuo
 * **Final Deployment:** Generated a fully interactive 3D surface projection of the physics tensor.
 
 [View the Final 3D Fabric Report](docs/Fabric_Report.md)
+
+## Week 6: Project Genesis - The Chaos Engine
+This week, I transcended classical sequential CPU loops and transitioned to massively parallel stochastic simulations using stateless JAX and agentic orchestration.
+
+* **Classical Limits:** Evaluated standard stateful `numpy` constraints through a Monte Carlo Pi estimation benchmark.
+* **The Quantum Leap:** Engineered a stateless JAX Monte Carlo business simulation, vectorizing 1,000,000 parallel stochastic paths via `jax.vmap` to analyze Expected Revenue and 95% Value-at-Risk (VaR).
+* **Agentic Automation:** Orchestrated a master-subagent workflow within the Antigravity IDE. *Subagent-Alpha* programmatically stress-tested the VaR breaking point, while *Subagent-Beta* profiled the exact performance overhead of JAX XLA compilation.
+* **Defeating the Black Swan:** Deployed **Module Alpha (The Matrix Carrier)** to model macro-economic Markov Chain state transitions. Simulated a severe 10-day structural anomaly (Black Swan shock) using `jax.lax.scan` to track the system's probability mass inversion and recovery curve.
+
+### Showcase Artifacts
+* [View the JAX Monte Carlo Revenue Distribution](data/revenue_dist.png)
+* [Read the Automated Agentic Swarm Stress Report](docs/Swarm_Stress_Report.md)
+* [View the Black Swan Markov Chain Timeline](data/markov_distribution.png)
