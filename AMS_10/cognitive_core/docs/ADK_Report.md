@@ -1,0 +1,5 @@
+### Reflection on ADK Autonomous State-Tracking vs. Manual Orchestration
+
+**How does the ADK’s native State-Tracking and Tool Calling compare to the manual while-loops and raw JSON parsing you had to write in Week 9?**
+
+Compared to the fragile manual `while`-loops and raw JSON parsing required in Week 9, the ADK’s native architecture provides a seamlessly integrated autonomous loop. By simply defining a standard Python function with type hints and a docstring, the framework automatically handles the tool registration, argument parsing, and state memory across context shifts. This built-in orchestration significantly reduces boilerplate code, transforming the agent from a static script into a robust, self-correcting cognitive entity capable of perceiving errors and recalculating its strategy without explicit prompt engineering from the user.
